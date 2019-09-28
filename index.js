@@ -31,9 +31,9 @@ app.get('/RutaDats/:datos', (req, res) => {//Datos variable que se leee
 //});
 app.configure(function() {
   // Set the IP and port to use the OpenShift variables.
-  app.set(8080 , process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 3000);
-  app.set(172.30.241.114, process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost');
+  app.set('8080' , process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 3000);
+  app.set('172.30.241.114', process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost');
 });
-app.listen(app.get(8080), app.get(172.30.241.114), function(){
-  console.log("Express server listening on " + app.get(172.30.241.114) + ":" + app.get(8080));
+app.listen(app.get('8080'), app.get('172.30.241.114'), function(){
+  console.log("Express server listening on " + app.get('172.30.241.114') + ":" + app.get('8080'));
 });
