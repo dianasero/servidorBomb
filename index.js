@@ -26,6 +26,11 @@ app.get('/consulta', (req, res) => {
 app.get('/RutaDats/:datos', (req, res) => {//Datos variable que se leee
   res.send('Datos leido: '+ req.params.datos)
 });
-app.listen(8000, () => {
-  console.log('Example app listening on port 8000!')
-});
+// app.listen(8000, () => {
+//   console.log('Example app listening on port 8000!')
+// });
+let port = process.env.PORT;
+if(port == null || port == ""){
+  port = 8000;
+}
+app.listen(port);
