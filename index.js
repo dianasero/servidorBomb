@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-let controlMaq1 = false, controlMaq2 = true;
+let controlMaq1 = false, controlMaq2 = false;
 app.get('/', (req, res) => {
   res.send('Hello Diana ')
 });
